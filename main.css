@@ -17,14 +17,15 @@ html {
 }
 
 body {
-  width: 100%;
-  height: 100%;
+  width: 100dvw;
+  height: 100dvh;
   background: url('images/sitebg.jpg') no-repeat center fixed;
   background-size: cover;
 }
 
 section {
   padding: 6rem 0;
+  display: flex;
 }
 
 a {
@@ -44,6 +45,7 @@ img {
 
 /*Start reusable*/
 .container {
+  justify-content: center;
   width: 90%;
   max-width: 120rem;
   height: 100%;
@@ -400,6 +402,11 @@ li {
 /*End services*/
 
 /*Start timeline*/
+.experience .container {
+  display: flex;
+  flex-direction: column;
+}
+
 .timeline ul {
   border-left: 4px solid #ffe838;
   border-radius: 0.8rem;
@@ -409,12 +416,13 @@ li {
   padding: 1.5rem;
   list-style: none;
   text-align: left;
-  width: 70%;
+  width: 90dvw;
   line-height: 1.5;
 }
 
 .timeline h1,
-.timeline h2 {
+.timeline h2,
+.timeline h3 {
   text-transform: uppercase;
   margin-bottom: 1rem;
   opacity: 0.3;
@@ -427,6 +435,11 @@ li {
 
 .timeline h2 {
   font-size: 1.7rem;
+  font-weight: 300;
+}
+
+.timeline h3 {
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -451,19 +464,20 @@ li {
   transform: translateY(-50%);
 }
 
-.timeline .date::before {
+/* .timeline .date::before {
   content: attr(data-date);
   left: -20rem;
   text-align: right;
   min-width: 12rem;
   font-size: 1.5rem;
-}
+} */
 
 .timeline .date::after {
   content: '';
   box-shadow: 0 0 0 4px #fd57bf;
   border-radius: 100%;
   left: -2.6rem;
+  top: 1.5rem;
   height: 1.5rem;
   width: 1.5rem;
   background-color: #313534;
@@ -473,6 +487,10 @@ li {
   font-weight: 600;
   font-style: italic;
   text-decoration: underline;
+}
+
+.timeline .mobile-data-date {
+  font-size: 1.5rem;
 }
 /*End timeline*/
 
@@ -566,6 +584,7 @@ input[type='submit']:hover {
 
 /*Start media queries*/
 @media screen and (max-width: 768px) {
+
   body {
     background: url('images/sitebg2.jpg') no-repeat center fixed;
     background-size: cover;

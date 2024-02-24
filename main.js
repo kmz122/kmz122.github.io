@@ -39,3 +39,13 @@ $(document).ready(function () {
     once: false,
   })
 })
+
+// JavaScript
+document.addEventListener('DOMContentLoaded', function () {
+  const mobileDataDates = document.querySelectorAll('.mobile-data-date')
+  console.log(`mobileDataDates => ${mobileDataDates}`)
+  mobileDataDates.forEach(function (element) {
+    const dateValue = element.parentElement.getAttribute('data-date')
+    element.textContent = dateValue
+  })
+})
